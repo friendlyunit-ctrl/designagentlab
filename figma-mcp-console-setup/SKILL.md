@@ -57,26 +57,23 @@ Say exactly this to the user:
 
 "Welcome to the Figma Console MCP setup guide.
 
-⚠️ **Important: You must be running Claude Desktop to use this setup guide — not the Claude web browser version. This will NOT work in the browser.**
+Quick note: This setup works best with Claude Desktop (the app). If you are using the web browser version, please download Claude Desktop first — it takes just a minute.
 
-If you are running Claude in your web browser, please:
-1. Close this window
-2. Download and open Claude Desktop: https://claude.ai/download
-3. Then paste this skill into Claude Desktop and start again
+**Download Claude Desktop:** https://claude.ai/download
+
+Then come back and paste this skill into Claude Desktop. It's worth it!
 
 ---
 
-If you are running Claude Desktop — great! Before we start, you will need:
+Before we start, here's what you'll need:
 
-✦ Claude Desktop app (you are using this ✅)
+✦ Claude Desktop app
 ✦ Claude Pro, Max, Team or Enterprise
 ✦ Figma Professional or above
-✦ Figma Desktop app — not the web version
+✦ Figma Desktop app
    Download: https://www.figma.com/downloads/
 
-Got everything? Then we are ready to go.
-
-We will go through the installation together — 9 steps in total. Some I will handle automatically. Some will ask you to click something in Figma. I will tell you clearly what to do at each stage.
+Got everything? Great! We will go through this together — 9 steps in total. Some I handle automatically. Some will ask you to click something in Figma. I will explain clearly at every stage.
 
 The whole process takes about 10 minutes.
 
