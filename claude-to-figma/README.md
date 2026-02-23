@@ -1,6 +1,6 @@
 # claude-to-figma
 
-**Your AI design partner for Figma — by Design Agent Lab**
+**v1.2.0 — Your AI design partner for Figma — by Design Agent Lab**
 
 claude-to-figma connects Claude directly to your Figma Desktop. It reads your component library, learns your design patterns, builds layouts from your components, and troubleshoots when something breaks.
 
@@ -96,6 +96,21 @@ The component library (14 components) and patterns (3 layout templates) were doc
 | Design patterns context | ✅ | ✅ |
 | Design in Figma | ✅ | ✅ |
 | Troubleshooting | ✅ | ✅ |
+
+---
+
+## Changelog
+
+**v1.2.0**
+- Fixed Windows troubleshooting — replaced `taskkill /F /IM node.exe` with a targeted command that only kills figma-console-mcp
+- Updated multi-instance note — no need to limit Claude sessions, supported since Figma Console MCP v1.10.0
+- Added official Figma Console MCP docs to resources
+
+**v1.1.0**
+- Added Figma branch recommendation to opening message — suggests creating a branch before working on live files
+
+**v1.0.0**
+- Initial release — component library context, design patterns context, design in Figma, troubleshooting
 
 ---
 

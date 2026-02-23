@@ -1,6 +1,6 @@
 # claude-to-figma
 
-**Version**: 1.1.0
+**Version**: 1.2.0
 **Platform**: macOS and Windows
 **Description**: Your AI design partner for Figma. Build component context, analyze design patterns, design layouts from your library, and troubleshoot Figma Console MCP — all from Claude.
 **Author**: Design Agent Lab — designagentlab.com
@@ -488,17 +488,17 @@ mcp__figma-console__figma_get_status
 
 **Step 2: Check for port conflicts**
 
-Tell the user: "Let me check for orphan processes. Please run this in Terminal:"
+Tell the user: "Let me clear any orphan MCP processes automatically."
 
-Mac:
+Mac — run automatically:
 ```bash
 pkill -f figma-console-mcp
 lsof -i :9223 -i :9224 -i :9225 | grep LISTEN
 ```
 
-Windows:
+Windows — run automatically:
 ```powershell
-taskkill /F /IM node.exe
+Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like "*figma-console-mcp*" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }
 netstat -ano | findstr :9223
 ```
 
@@ -562,8 +562,9 @@ If plugin shows connected but Claude still can not reach Figma — tell the user
 - Fix: Always use `await figma.getNodeByIdAsync()`
 
 **Multiple port conflicts:**
-- Cause: Multiple Claude Desktop sessions or force-quit without proper shutdown
-- Fix: `pkill -f figma-console-mcp` → restart plugin → always use one Claude session at a time
+- Cause: Force-quit without proper shutdown leaving orphan processes
+- Fix: Mac — `pkill -f figma-console-mcp` / Windows — kill only the MCP process (see troubleshooting Step 2) → restart plugin
+- Note: As of v1.10.0, multiple instances run simultaneously — no need to limit Claude sessions
 
 **Token error** (`Invalid token` or auth failure):
 - Check token starts with `figd_`
@@ -610,6 +611,7 @@ Confirm connection before returning to main menu.
 ## RESOURCES
 
 - Figma Console MCP: https://github.com/southleft/figma-console-mcp
+- Figma Console MCP Docs: https://docs.figma-console-mcp.southleft.com
 - figma-mcp-console-setup skill: https://github.com/designagentlab/skills/tree/main/figma-mcp-console-setup
 - DesignOps skill: https://github.com/designagentlab/skills/tree/main/designops
 - Figma Personal Access Tokens: https://help.figma.com/hc/en-us/articles/8085703771159
