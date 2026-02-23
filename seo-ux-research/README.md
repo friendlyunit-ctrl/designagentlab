@@ -1,6 +1,6 @@
 # seo-ux-research
 
-**SEO meets UX. Research that is ready to design from.**
+**v1.0.0 — SEO meets UX. Research that is ready to design from.**
 
 SEO-UX Research is an AI skill for designers and design teams. It runs live browser research — keyword analysis, competitor crawling, visual inspiration — and combines it with a UX portrait of your target user. The output is a complete research package you can hand directly to a designer, or feed into the Figma design agent to start building.
 
