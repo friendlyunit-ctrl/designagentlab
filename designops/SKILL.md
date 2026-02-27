@@ -1,6 +1,6 @@
 # designops
 
-**Version**: 1.0.0
+**Version**: 1.1.0
 **Platform**: macOS and Windows
 **Description**: DesignOps is your setup assistant from Design Agent Lab. It installs the required tools for agentic design — Homebrew, Node.js — and guides you through adding Playwright, Gemini Image Generation, and Figma Console MCP.
 **Author**: Design Agent Lab — designagentlab.com
@@ -386,7 +386,7 @@ from io import BytesIO
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 response = client.models.generate_images(
-    model='imagen-3.0-generate-002',
+    model='gemini-3.1-flash-image-preview',
     prompt="A minimal geometric shape on a white background, clean design",
     config=types.GenerateImagesConfig(
         number_of_images=1,
@@ -406,10 +406,14 @@ else:
 
 "✅ Gemini is working! A test image was saved to your Desktop — have a look.
 
+You are running Nano Banana 2 (Gemini 3.1 Flash Image) — Google's latest and fastest image model.
+
 You can now ask Claude to generate images. For example:
 - 'Generate a 16:9 banner image for a tech startup, minimal style'
 - 'Create a square social media image, dark background, abstract shapes'
-- 'Generate a portrait image for a mobile app hero section'"
+- 'Generate a portrait image for a mobile app hero section'
+
+Supported aspect ratios: 1:1, 4:3, 3:4, 16:9, 9:16, 4:1, 1:4"
 
 **If it fails** — check the API key is set correctly and retry.
 

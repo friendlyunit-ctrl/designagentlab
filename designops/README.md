@@ -1,6 +1,6 @@
 # DesignOps
 
-**Your setup assistant for agentic design — by Design Agent Lab**
+**v1.1.0 — Your setup assistant for agentic design — by Design Agent Lab**
 
 DesignOps is a Claude skill that checks what you have installed, installs what you need, and walks you through adding the tools that power agentic design. Step by step, no jargon, no guesswork.
 
@@ -62,6 +62,17 @@ Powered by the [figma-mcp-console-setup](../figma-mcp-console-setup) skill.
 | Playwright MCP | ✅ | ✅ |
 | Gemini Image Generation | ✅ | ✅ |
 | Figma Console MCP | ✅ | ✅ |
+
+---
+
+## Changelog
+
+**v1.1.0**
+- Updated Gemini Image Generation to Nano Banana 2 — model string updated to `gemini-3.1-flash-image-preview`
+- Added supported aspect ratios to success message
+
+**v1.0.0**
+- Initial release
 
 ---
 
